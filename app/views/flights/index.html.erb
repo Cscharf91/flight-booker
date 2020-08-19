@@ -4,5 +4,7 @@
 
 
 <% if @flights %>
-  <%= render 'flight_form' %>
+  <% unless @flights.first.nil? %>
+    <%= render 'flight_form' %>
+  <% end %>
 <% end %>

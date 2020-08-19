@@ -1,10 +1,11 @@
 <%= form_for(@booking) do |b| %>
   <%= b.hidden_field(:flight_id, value: @flight.id) %>
   <%= b.fields_for :passengers do |p| %>
+      Passenger:
       <%= p.label :name %>
-      <%= p.text_field :name, class: 'form-control' %>
+      <%= p.text_field :name %>
       <%= p.label :email %>
-      <%= p.email_field :email, class: 'form-control' %>
+      <%= p.email_field :email %></br>
   <% end %>
   <%= b.submit "Book Flights", id: 'search', class: "btn btn-primary" %>
 <% end %>
