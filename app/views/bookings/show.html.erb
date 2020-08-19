@@ -1,0 +1,14 @@
+<h2>Your flight from <%= @flight.origin.code %> to <%= @flight.destination.code %> has been booked!</h2>
+
+<h4>Flight Details: </h4>
+<%= render 'flights/flights', flight: @flight %>
+
+<% if @booking.passengers.count > 1 %>
+  <h4>Passengers:</h4>
+<% else %>
+  <h4>Passenger:</h4>
+<% end %>
+<% @booking.passengers.each do |p| %>
+  <%= p.name %></br>
+  <%= p.email %></br>
+<% end %>

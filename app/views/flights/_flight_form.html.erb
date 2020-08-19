@@ -1,0 +1,10 @@
+<h1>Select A Flight:</h1>
+<%= form_with(url: new_booking_path, method: "get", local: true) do %>
+  <% @flights.each do |flight| %>
+  <%= radio_button_tag(:flight_id, flight.id) %>
+  <%= label_tag(:flight_id, "Flight") %>
+  <%= render 'flights/flights', flight: flight %></br>
+  <% end %>
+  <%= hidden_field_tag(:passengers, params[:passengers]) %>
+  <%= submit_tag("Submit") %>
+<% end %>
