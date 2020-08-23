@@ -1,0 +1,8 @@
+Thank you for booking with Flightopedia, <%= @user.name %>!
+===================================================================
+
+You have booked flight #<%= @flight.id %>:<br>
+
+<%= @flight.origin.code %> to <%= @flight.destination.code %> on <%= @flight.start %><br>
+
+<%= link_to "View Booking", booking_url(@booking, host: 'localhost:3000') %>
